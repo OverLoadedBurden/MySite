@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>Django Girls blog</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"rel="stylesheet"type="text/css">
+    <title>Django Girls blog</title></head>
+<body>
+<div>
+    <h1>
+        <a href="">Django Girls Blog</a></h1>
+</div>
+It works! But we want them to be displayed like the static posts we created earlier in the Introduction to HTML
+chapter.You can mix HTML and template tags. Our body will look like this:blog/templates/blog/post_list.html
+<div>
+    <h1>
+        <a href="/">Django Girls Blog</a></h1>
+</div>
+{% for post in posts %}
+<div><p>published: {{ post.published_date }}</p>
+    <h1>
+        <a href="">{{ post.title }}</a></h1>
+    <p>{{ post.text|linebreaksbr }}</p></div>
+{% endfor %}
+</body>
+</html>
